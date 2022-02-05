@@ -9,8 +9,8 @@ SPACESHIP_WIDTH, SPACESHIP_HEIGHT = 55, 40
 
 BORDER = pygame.Rect( WIDTH//2 -5, 0, 10, HEIGHT)
 
-BULLET_HIT_SOUND = pygame.mixer.Sound(os.path.join("Documents\GitHub\Space-War","Grenade+1.mp3"))
-BULLET_FIRE_SOUND = pygame.mixer.Sound(os.path.join("Documents\GitHub\Space-War","Gun+Silencer.mp3"))
+BULLET_HIT_SOUND = pygame.mixer.Sound(os.path.join("Space-War","Grenade+1.mp3"))
+BULLET_FIRE_SOUND = pygame.mixer.Sound(os.path.join("Space-War","Gun+Silencer.mp3"))
 
 
 HEALTH_FONT = pygame.font.SysFont("comicsans", 40)
@@ -28,20 +28,19 @@ VEL = 7
 BULLET_VEL = 7
 MAX_BULLETS = 3
 
-
 YELLOW_HIT = pygame.USEREVENT + 1
 RED_HIT = pygame.USEREVENT + 2
 
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption(("SPACE WAR"))
 
-YELLOW__SPACESHIP = pygame.image.load (os.path.join("Documents\GitHub\Space-War","spaceship_yellow.png"))
+YELLOW__SPACESHIP = pygame.image.load (os.path.join("Space-War","spaceship_yellow.png"))
 YELLOW_SPACESHIP = pygame.transform.rotate( pygame.transform.scale(YELLOW__SPACESHIP,(SPACESHIP_WIDTH,SPACESHIP_HEIGHT)), 90)
 
-RED__SPACESHIP = pygame.image.load (os.path.join("Documents\GitHub\Space-War","spaceship_red.png"))
+RED__SPACESHIP = pygame.image.load (os.path.join("Space-War","spaceship_red.png"))
 RED_SPACESHIP = pygame.transform.rotate( pygame.transform.scale(RED__SPACESHIP, (SPACESHIP_WIDTH,SPACESHIP_HEIGHT) ), 270)
 
-SPACE = pygame.transform.scale(pygame.image.load(os.path.join("Documents\GitHub\Space-War","space_2.jpg")), (WIDTH, HEIGHT))
+SPACE = pygame.transform.scale(pygame.image.load(os.path.join("Space-War","space_2.jpg")), (WIDTH, HEIGHT))
 
 def draw_window(red,yellow, red_bullets, yellow_bullets, red_health, yellow_health):
     WIN.blit(SPACE, (0, 0))
@@ -102,13 +101,13 @@ def handle_bullets(yellow_bullets, red_bullets, yellow, red ):
         elif bullet.x < 0:
             red_bullets.remove(bullet)
 
-
 def draw_winner(text):
     draw_text = WINNER_FONT.render(text, 1, WHITE)
     WIN.blit(draw_text, (WIDTH//2 - draw_text.get_width()//2, HEIGHT//2 - draw_text.get_height()//2))
+    red_bullets = []
+    yellow_bullets = []
     pygame.display.update()
-    pygame.time.delay(3000)
-
+    pygame.time.delay(2500)
 
 def main():
 
@@ -167,7 +166,6 @@ def main():
         draw_window(red,yellow, red_bullets, yellow_bullets, red_health, yellow_health)
 
     main()
-
 
 if __name__ == "__main__":
     main()
