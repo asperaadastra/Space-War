@@ -9,8 +9,8 @@ SPACESHIP_WIDTH, SPACESHIP_HEIGHT = 55, 40
 
 BORDER = pygame.Rect( WIDTH//2 -5, 0, 10, HEIGHT)
 
-BULLET_HIT_SOUND = pygame.mixer.Sound(os.path.join("Assets", "Grenade+1.mp3"))
-BULLET_FIRE_SOUND = pygame.mixer.Sound(os.path.join("Assets", "Gun+Silencer.mp3"))
+BULLET_HIT_SOUND = pygame.mixer.Sound(os.path.join("Documents\GitHub\Space-War","Grenade+1.mp3"))
+BULLET_FIRE_SOUND = pygame.mixer.Sound(os.path.join("Documents\GitHub\Space-War","Gun+Silencer.mp3"))
 
 
 HEALTH_FONT = pygame.font.SysFont("comicsans", 40)
@@ -35,13 +35,13 @@ RED_HIT = pygame.USEREVENT + 2
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption(("SPACE WAR"))
 
-YELLOW__SPACESHIP = pygame.image.load (os.path.join("Assets", "spaceship_yellow.png"))
+YELLOW__SPACESHIP = pygame.image.load (os.path.join("Documents\GitHub\Space-War","spaceship_yellow.png"))
 YELLOW_SPACESHIP = pygame.transform.rotate( pygame.transform.scale(YELLOW__SPACESHIP,(SPACESHIP_WIDTH,SPACESHIP_HEIGHT)), 90)
 
-RED__SPACESHIP = pygame.image.load (os.path.join("Assets", "spaceship_red.png"))
+RED__SPACESHIP = pygame.image.load (os.path.join("Documents\GitHub\Space-War","spaceship_red.png"))
 RED_SPACESHIP = pygame.transform.rotate( pygame.transform.scale(RED__SPACESHIP, (SPACESHIP_WIDTH,SPACESHIP_HEIGHT) ), 270)
 
-SPACE = pygame.transform.scale(pygame.image.load(os.path.join("Assets", "space_2.jpg")), (WIDTH, HEIGHT))
+SPACE = pygame.transform.scale(pygame.image.load(os.path.join("Documents\GitHub\Space-War","space_2.jpg")), (WIDTH, HEIGHT))
 
 def draw_window(red,yellow, red_bullets, yellow_bullets, red_health, yellow_health):
     WIN.blit(SPACE, (0, 0))
